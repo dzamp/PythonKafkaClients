@@ -12,14 +12,12 @@
   }, {
     "name" : "alert_end_time",
     "type" : [ "null", {
-      "type" : "long",
-      "java-class" : "java.lang.Long"
+      "type" : "long"
     } ]
   }, {
     "name" : "alert_id",
     "type" : {
-      "type" : "int",
-      "java-class" : "java.lang.Integer"
+      "type" : "int"
     }
   }, {
     "name" : "alert_level",
@@ -31,8 +29,7 @@
   }, {
     "name" : "alert_start_time",
     "type" : [ "null", {
-      "type" : "long",
-      "java-class" : "java.lang.Long"
+      "type" : "long"
     } ]
   }, {
     "name" : "alert_status",
@@ -50,8 +47,7 @@
   }, {
     "name" : "altitude",
     "type" : [ "null", {
-      "type" : "double",
-      "java-class" : "java.lang.Double"
+      "type" : "double"
     } ]
   }, {
     "name" : "ciram_details",
@@ -72,26 +68,22 @@
   }, {
     "name" : "latitude",
     "type" : [ "null", {
-      "type" : "double",
-      "java-class" : "java.lang.Double"
+      "type" : "double"
     } ]
   }, {
     "name" : "longitude",
     "type" : [ "null", {
-      "type" : "double",
-      "java-class" : "java.lang.Double"
+      "type" : "double"
     } ]
   }, {
     "name" : "timestamp",
     "type" : [ "null", {
-      "type" : "long",
-      "java-class" : "java.lang.Long"
+      "type" : "long"
     } ]
   }, {
     "name" : "tracked_entity_id",
     "type" : [ "null", {
-      "type" : "int",
-      "java-class" : "java.lang.Integer"
+      "type" : "int"
     } ]
   } ]
 }

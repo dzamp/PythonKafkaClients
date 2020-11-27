@@ -50,22 +50,6 @@
       "type" : "double"
     } ]
   }, {
-    "name" : "ciram_details",
-    "type" : [ "null", {
-      "type" : "record",
-      "name" : "CiramDetails",
-      "fields" : [ {
-        "name" : "impact",
-        "type" : [ "null", "Level" ]
-      }, {
-        "name" : "threat",
-        "type" : [ "null", "Level" ]
-      }, {
-        "name" : "vulnerability",
-        "type" : [ "null", "Level" ]
-      } ]
-    } ]
-  }, {
     "name" : "latitude",
     "type" : [ "null", {
       "type" : "double"
@@ -85,5 +69,23 @@
     "type" : [ "null", {
       "type" : "int"
     } ]
-  } ]
+  },
+   {
+      "name" : "ciram_details",
+      "type" : [ "null", {
+        "type" : "record",
+        "name" : "CiramDetails",
+        "fields" : [ {
+          "name" : "impact",
+          "type" : [ "null", "Level" ]
+        }, {
+          "name" : "threat",
+          "type" : [ "null", "Level" ]
+        }, {
+          "name" : "vulnerability",
+          "type" : [ "null", "Level" ]
+        } ]
+      } ]
+    }
+  ]
 }

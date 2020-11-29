@@ -1,24 +1,16 @@
 {
   "type" : "record",
-  "name" : "Alert",
-  "namespace" : "com.aresibo.avro.alert",
+  "name" : "RiskAlert",
+  "namespace" : "com.aresibo.avro.risk",
   "fields" : [ {
-    "name" : "alert_category",
-    "type" : [ "null", {
-      "type" : "enum",
-      "name" : "Category",
-      "symbols" : [ "VISREC", "SFE", "RISK", "RES" ]
-    } ]
-  }, {
     "name" : "alert_end_time",
     "type" : [ "null", {
       "type" : "long"
     } ]
   }, {
     "name" : "alert_id",
-    "type" : {
-      "type" : "int"
-    }
+    "type" : "string",
+    "logicalType": "UUID"
   }, {
     "name" : "alert_level",
     "type" : [ "null", {

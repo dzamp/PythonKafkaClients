@@ -1,10 +1,8 @@
 import time
+import uuid
 from confluent_kafka import avro
 from confluent_kafka.avro import AvroProducer
 import avro.schema
-
-
-
 
 class Messenger(object):
 
@@ -15,7 +13,6 @@ class Messenger(object):
         pass
 
 
-
 class AvroMessenger(Messenger):
 
     def get_message(self):
@@ -23,11 +20,10 @@ class AvroMessenger(Messenger):
 
         message = {
 
-            "alert_id": 4,
+            "alert_id": str(uuid.uuid4()),
             "alert_level": "LOW",
             "alert_title": "Warning",
             "alert_text": "This is a warning",
-            "alert_category": "RISK",
             "alert_start_time": example_time,
             "alert_end_time": example_time,
             "alert_status": "ALERT_ACTIVE",
@@ -35,24 +31,20 @@ class AvroMessenger(Messenger):
             "latitude": 37.983810,
             "longitude": 23.727539,
             "time": example_time
-
         }
         print("Message: {}".format(message))
 
         return message
 
 
-
-def run( messenger):
+def run(messenger):
     """Produce messages according to the specified Avro schema"""
-    value_schema = avro.schema.Parse(open("schemas/Alert.avsc","rb").read())
+    value_schema = avro.schema.Parse(open("schemas/FusionAlert.avsc", "rb").read())
     conf = {'bootstrap.servers': "temple.di.uoa.gr:9092",
             'schema.registry.url': "http://temple.di.uoa.gr:8081"}
     avro_producer = AvroProducer(conf, default_value_schema=value_schema)
 
     while True:
-
-
         # Assemble avro-formatted message filled with generated data
         message = messenger.get_message()
 
@@ -67,7 +59,5 @@ def run( messenger):
 
 
 if __name__ == "__main__":
-
     messenger = AvroMessenger()
-    run( messenger)
-  
+    run(messenger)

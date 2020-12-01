@@ -28,8 +28,7 @@ class AvroMessenger(Messenger):
             "alert_end_time": example_time,
             "alert_status": "ALERT_ACTIVE",
             "tracked_entity_id": 2,
-            "latitude": 37.983810,
-            "longitude": 23.727539,
+            "location": {"type": "Point", "coordinates": [39.5095, -0.470773]},
             "time": example_time
         }
         print("Message: {}".format(message))

@@ -1,83 +1,101 @@
 {
-  "type" : "record",
-  "name" : "RiskAlert",
-  "namespace" : "com.aresibo.avro.risk",
-  "fields" : [ {
-    "name" : "alert_end_time",
-    "type" : [ "null", {
-      "type" : "long"
-    } ]
-  }, {
-    "name" : "alert_id",
-    "type" : "string",
-    "logicalType": "UUID"
-  }, {
-    "name" : "alert_level",
-    "type" : [ "null", {
-      "type" : "enum",
-      "name" : "Level",
-      "symbols" : [ "LOW", "MEDIUM", "HIGH" ]
-    } ]
-  }, {
-    "name" : "alert_start_time",
-    "type" : [ "null", {
-      "type" : "long"
-    } ]
-  }, {
-    "name" : "alert_status",
-    "type" : [ "null", {
-      "type" : "enum",
-      "name" : "Status",
-      "symbols" : [ "ALERT_ACTIVE", "ALERT_INACTIVE" ]
-    } ]
-  }, {
-    "name" : "alert_text",
-    "type" : [ "null", "string" ]
-  }, {
-    "name" : "alert_title",
-    "type" : [ "null", "string" ]
-  }, {
-    "name" : "altitude",
-    "type" : [ "null", {
-      "type" : "double"
-    } ]
-  }, {
-    "name" : "latitude",
-    "type" : [ "null", {
-      "type" : "double"
-    } ]
-  }, {
-    "name" : "longitude",
-    "type" : [ "null", {
-      "type" : "double"
-    } ]
-  }, {
-    "name" : "timestamp",
-    "type" : [ "null", {
-      "type" : "long"
-    } ]
-  }, {
-    "name" : "tracked_entity_id",
-    "type" : [ "null", {
-      "type" : "int"
-    } ]
-  },
-   {
-      "name" : "ciram_details",
-      "type" : [ "null", {
-        "type" : "record",
-        "name" : "CiramDetails",
-        "fields" : [ {
-          "name" : "impact",
-          "type" : [ "null", "Level" ]
+  "type": "record",
+  "name": "RiskAlert",
+  "namespace": "com.aresibo.avro.risk",
+  "fields": [{
+      "name": "alert_end_time",
+      "type": ["null", {
+        "type": "long"
+      }]
+    }, {
+      "name": "alert_id",
+      "type": "string",
+      "logicalType": "UUID"
+    }, {
+      "name": "alert_level",
+      "type": ["null", {
+        "type": "enum",
+        "name": "Level",
+        "symbols": ["LOW", "MEDIUM", "HIGH"]
+      }]
+    }, {
+      "name": "alert_start_time",
+      "type": ["null", {
+        "type": "long"
+      }]
+    }, {
+      "name": "alert_status",
+      "type": ["null", {
+        "type": "enum",
+        "name": "Status",
+        "symbols": ["ALERT_ACTIVE", "ALERT_INACTIVE"]
+      }]
+    }, {
+      "name": "alert_text",
+      "type": ["null", "string"]
+    }, {
+      "name": "alert_title",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "location",
+      "type": {
+        "type": "record",
+        "name": "Location",
+        "fields": [{
+            "name": "type",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": "Point"
+          },
+          {
+            "name": "coordinates",
+            "type": [{
+                "type": "array",
+                "items": "float"
+              },
+              "null"
+            ]
+          },
+          {
+            "name": "radius",
+            "type": [
+              "float",
+              "null"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": ["null", {
+        "type": "long"
+      }]
+    }, {
+      "name": "tracked_entity_id",
+      "type": ["null", {
+        "type": "int"
+      }]
+    },
+    {
+      "name": "ciram_details",
+      "type": ["null", {
+        "type": "record",
+        "name": "CiramDetails",
+        "fields": [{
+          "name": "impact",
+          "type": ["null", "Level"]
         }, {
-          "name" : "threat",
-          "type" : [ "null", "Level" ]
+          "name": "threat",
+          "type": ["null", "Level"]
         }, {
-          "name" : "vulnerability",
-          "type" : [ "null", "Level" ]
-        } ]
-      } ]
+          "name": "vulnerability",
+          "type": ["null", "Level"]
+        }]
+      }]
     }
   ]
 }

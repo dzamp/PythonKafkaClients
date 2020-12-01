@@ -33,6 +33,7 @@ class AvroMessenger(Messenger):
             "latitude": 37.983810,
             "longitude": 23.727539,
             "time": int(round(time.time() * 1000)), #now
+            "location": {"type": "Point", "coordinates": [39.5095, -0.470773]},
             "ciram_details": {
               "threat" : "LOW",
               "impact" : "MEDIUM",
